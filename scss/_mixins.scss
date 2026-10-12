@@ -1,0 +1,54 @@
+@use 'variaveis' as *;
+
+// Centraliza conteúdo com flexbox
+@mixin flex-centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Botão padrão (usado em .btn)
+@mixin botao-padrao($bg: $cor-destaque, $bg-hover: $cor-destaque-hover) {
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  background: $bg;
+  color: $cor-branco;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.4em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $bg-hover;
+  }
+}
+
+// Espaçamento padrão de seção (com fundo opcional)
+@mixin secao($fundo: null) {
+  padding: $espacamento-secao $lateral;
+
+  @if $fundo {
+    background: $fundo;
+  }
+}
+
+// Título de seção
+@mixin titulo-secao($margem: $espacamento-base) {
+  margin-bottom: $margem;
+  font-size: $fonte-titulo-secao;
+}
+
+// Coluna da área de contato (info + formulário)
+@mixin coluna-contato {
+  flex: 1 1 20rem;
+  max-width: 30rem;
+}
+
+// Media query de largura máxima
+@mixin responsivo($largura) {
+  @media (max-width: $largura) {
+    @content;
+  }
+}

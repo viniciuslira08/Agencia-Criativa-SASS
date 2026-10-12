@@ -1,0 +1,12 @@
+{
+  "name": "agencia-criativa-sass",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss/estilos.scss css/estilos.css",
+    "sass:watch": "sass --watch scss/estilos.scss css/estilos.css"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}

@@ -1,0 +1,80 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// ---------- LOGO ----------
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  span {
+    color: $cor-destaque;
+  }
+}
+
+// ---------- BOTÃO ----------
+.btn {
+  @include botao-padrao;
+}
+
+// ---------- CARD ----------
+.card {
+  background: $cor-branco;
+  padding: calc($espacamento-base * 1.5);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.08);
+  text-align: left;
+
+  h3 {
+    margin-bottom: calc($espacamento-base / 2);
+    color: $cor-primaria;
+  }
+}
+
+// ---------- DEPOIMENTOS ----------
+.lista-depoimentos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc($espacamento-base * 1.5);
+  justify-content: center;
+
+  blockquote {
+    flex: 1 1 15rem;
+    max-width: 20rem;
+    background: $cor-fundo-claro;
+    padding: calc($espacamento-base * 1.5);
+    border-radius: 0.5rem;
+    font-style: italic;
+  }
+
+  footer {
+    margin-top: calc($espacamento-base * 0.8);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+}
+
+// ---------- FORMULÁRIO ----------
+.form-contato {
+  @include coluna-contato;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-top: $espacamento-base;
+    margin-bottom: calc($espacamento-base * 0.3);
+  }
+
+  input,
+  textarea {
+    padding: 0.6em;
+    border: none;
+    border-radius: 0.3em;
+    font-size: 1rem;
+  }
+
+  button {
+    margin-top: calc($espacamento-base * 1.5);
+    align-self: flex-start;
+  }
+}

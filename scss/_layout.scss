@@ -1,0 +1,176 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+// ---------- HEADER / NAV ----------
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $espacamento-base $lateral;
+  background: $cor-primaria;
+  color: $cor-branco;
+  position: relative;
+}
+
+.nav {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: calc($espacamento-base * 2);
+  }
+
+  a {
+    color: $cor-branco;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $cor-destaque;
+    }
+  }
+
+  @include responsivo($bp-tablet) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $cor-primaria;
+    display: none;
+
+    ul {
+      flex-direction: column;
+      padding: $espacamento-base $lateral;
+      gap: $espacamento-base;
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+
+  @include responsivo($bp-tablet) {
+    &:checked ~ .nav {
+      display: block;
+    }
+  }
+}
+
+.menu-icon {
+  display: none;
+
+  @include responsivo($bp-tablet) {
+    display: block;
+    font-size: 1.8rem;
+    color: $cor-branco;
+    cursor: pointer;
+  }
+}
+
+// ---------- HOME ----------
+.home {
+  @include flex-centro;
+  min-height: 90vh;
+  text-align: center;
+  padding: calc($espacamento-base * 2) $lateral;
+  background: linear-gradient(135deg, $cor-primaria, $cor-secundaria);
+  color: $cor-branco;
+}
+
+.home-content {
+  h1 {
+    font-size: $fonte-titulo-hero;
+    margin-bottom: $espacamento-base;
+
+    @include responsivo($bp-tablet) {
+      font-size: $fonte-titulo-hero-tablet;
+    }
+
+    @include responsivo($bp-mobile) {
+      font-size: $fonte-titulo-hero-mobile;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    max-width: 40rem;
+    margin: 0 auto calc($espacamento-base * 1.5);
+
+    @include responsivo($bp-mobile) {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ---------- SOBRE ----------
+.sobre {
+  @include secao;
+  text-align: center;
+  max-width: 60rem;
+  margin: 0 auto;
+
+  h2 {
+    @include titulo-secao($espacamento-base);
+  }
+}
+
+// ---------- SERVIÇOS ----------
+.servicos {
+  @include secao($cor-fundo-claro);
+  text-align: center;
+
+  h2 {
+    @include titulo-secao(calc($espacamento-base * 2));
+  }
+}
+
+.grid-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: calc($espacamento-base * 1.5);
+
+  @include responsivo($bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ---------- DEPOIMENTOS ----------
+.depoimentos {
+  @include secao;
+  text-align: center;
+
+  h2 {
+    @include titulo-secao(calc($espacamento-base * 2));
+  }
+}
+
+// ---------- CONTATO ----------
+.contato {
+  @include secao($cor-primaria);
+  color: $cor-branco;
+
+  h2 {
+    @include titulo-secao(calc($espacamento-base * 2));
+    text-align: center;
+  }
+}
+
+.contato-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc($espacamento-base * 2);
+  justify-content: center;
+}
+
+.info-contato {
+  @include coluna-contato;
+}
+
+// ---------- FOOTER ----------
+.footer {
+  text-align: center;
+  padding: calc($espacamento-base * 1.5);
+  background: $cor-footer;
+  color: $cor-footer-texto;
+  font-size: 0.9rem;
+}

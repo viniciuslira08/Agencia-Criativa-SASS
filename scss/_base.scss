@@ -1,0 +1,17 @@
+@use 'variaveis' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // 1rem = 16px
+}
+
+body {
+  font-family: $fonte-base;
+  color: $cor-texto;
+  line-height: 1.6;
+}
