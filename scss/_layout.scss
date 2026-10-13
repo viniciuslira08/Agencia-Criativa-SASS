@@ -19,7 +19,7 @@
     gap: calc($espacamento-base * 2);
   }
 
-  a {
+  &__link {
     color: $cor-branco;
     text-decoration: none;
     font-size: 1rem;

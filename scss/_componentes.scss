@@ -24,7 +24,7 @@
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.08);
   text-align: left;
 
-  h3 {
+  &__titulo {
     margin-bottom: calc($espacamento-base / 2);
     color: $cor-primaria;
   }
